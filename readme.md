@@ -23,3 +23,29 @@ npm run dev
 ```
 
 > Check your running frontend to see that itunes API is working correctly for iOS devices.
+
+### [Backend] Production: iOS itunes API workaround
+
+> Note: Vercel was used to host this backend
+
+Step 1: Create a configuration file like the `vercel.json` in the directory. Copy and paste the content in the `vercel.json` into your newly created file.
+
+Step 2: Go to the `package.json` file, inside the `script` section, add:
+
+```
+"start": "node server.js"
+```
+
+Step 3: Push the changes you've made. Create an account on Vercel(if you don't have an account) and link your Github to it. Import this repo
+
+Step 4: Before deploying in the `Environment Variable` section on vercel, in the `key` section paste:
+```
+PROD_FRONTEND_ORIGIN
+```
+
+in the `value` section paste:
+```
+https://echo-nova-music-web-app.vercel.app
+```
+
+Step 5: Deploy.
